@@ -66,7 +66,7 @@ file=open('Klienta_info.txt')
 
 
 class logwindow:
-    layout=[[sg.T('Klients')]],
+    layout=[[sg.T('Klients')],
         [sg.T('Vards'), sg.I(key='vards')],
         [sg.T('Uzvards'), sg.I(key='uzvards')],
         [sg.T('Produkta_nosaukums'), sg.I(key='produkta_nosaukums')],
@@ -79,7 +79,7 @@ class logwindow:
     window=sg.Window('klienta dati', layout)
     
 
-        while True:
+    while True:
         event, values=window.read()
 
 
@@ -87,10 +87,10 @@ class logwindow:
             break
 
         elif event=='Saglabat':
-          klients1=laiks(values['vards'], values['uzvards'], values['produkta_nosaukums'], values['produkta_kategorija']), values['produkts_pieejams']), values['nomas_cena_diena'])
+          klients1=laiks(values['vards'], values['uzvards'], values['produkta_nosaukums'], values['produkta_kategorija'], values['produkts_pieejams'], values['nomas_cena_diena'])
 
         elif event=="Izvadit uz ekrana":
-          klients1=laiks(values['vards'], values['uzvards'], values['produkta_nosaukums'], values['produkta_kategorija']), values['produkts_pieejams']), values['nomas_cena_diena'])
+          klients1=laiks(values['vards'], values['uzvards'], values['produkta_nosaukums'], values['produkta_kategorija'], values['produkts_pieejams'], values['nomas_cena_diena'])
           klients1.get_data()
 
         elif event=="Saglabat teksta formata":
@@ -105,4 +105,4 @@ class logwindow:
 now = datetime.now()
 
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-print("laiks un datums=", dt_string)	
+print("laiks un datums=", dt_string)
